@@ -1,6 +1,9 @@
-# aesthetic-startpage
-Aesthetic Startpage to boost your productivity and at the same time give your desktop a new aesthetic look.
-Here is a [Live Preview](https://nainish-startpage.netlify.app/)
+# Browser startpage
+Startpage to boost your productivity and at the same time give your desktop a new aesthetic look.
+
+Here is a [Live Preview](https://sebviolet.github.io/startpage/)
+
+(fork from [Nainish](https://github.com/Nainish-Rai/aesthetic-startpage))
 
 ## Installation
 ##### Method 1:
@@ -12,36 +15,45 @@ Here is a [Live Preview](https://nainish-startpage.netlify.app/)
 6. Select Custom url homepage and paste the url.
 
 ##### Method 2:
-- Copy this Page [link](https://nainish-startpage.netlify.app/) and use it as custom url homepage
+- Copy this Page [link](https://sebviolet.github.io/startpage/) and use it as custom url homepage
 
 ### Changing-Themes 
 - You can change theme using the menu given at top-right corner.
 - You can use a specific-theme by using method-1.
 
-## Themes:
-### Purple-Mesh
-![Screenshot from 2022-10-04 22-50-35](https://user-images.githubusercontent.com/109546113/193884959-fde95cd2-fe52-4c2a-8f22-91b2bc83ed6a.png)
-### Orange
-![Screenshot from 2022-10-04 22-59-26](https://user-images.githubusercontent.com/109546113/193887457-1923a57d-879d-4145-9add-f7800960ff6f.png)
+## Themes
+<details>
+  <summary>Purple-Mesh</summary>
+   <img src="https://user-images.githubusercontent.com/109546113/193884959-fde95cd2-fe52-4c2a-8f22-91b2bc83ed6a.png" />
+</details>
 
-### Blue
-![Screenshot from 2022-10-04 22-59-39](https://user-images.githubusercontent.com/109546113/193887481-973a2c77-909e-4f70-b49c-a9cc9c869ea1.png)
+<details>
+  <summary>Orange</summary>
+  <img src="https://user-images.githubusercontent.com/109546113/193887457-1923a57d-879d-4145-9add-f7800960ff6f.png" />
+</details>
 
-### Green
-![Screenshot from 2022-10-04 22-59-52](https://user-images.githubusercontent.com/109546113/193887509-a5969dfe-17a4-429c-b337-f8d3589306d2.png)
+<details>
+  <summary>Blue</summary>
+  <img src="https://user-images.githubusercontent.com/109546113/193887481-973a2c77-909e-4f70-b49c-a9cc9c869ea1.png" />
+</details>
 
-### Cherry
-![Screenshot from 2022-10-04 23-00-04](https://user-images.githubusercontent.com/109546113/193887547-87a580f8-b32d-478e-a96c-967eca69afbc.png)
+<details>
+  <summary>Green</summary>
+  <img src="https://user-images.githubusercontent.com/109546113/193887509-a5969dfe-17a4-429c-b337-f8d3589306d2.png" />
+</details>
 
+<details>
+  <summary>Cherry</summary>
+  <img src="https://user-images.githubusercontent.com/109546113/193887547-87a580f8-b32d-478e-a96c-967eca69afbc.png" />
+</details>
 
-### Purple
-![Screenshot from 2022-10-04 23-00-35](https://user-images.githubusercontent.com/109546113/193887582-95498fcf-ca59-49bc-a128-960b7439ee8b.png)
-
+<details>
+  <summary>Purple</summary>
+  <img src="https://user-images.githubusercontent.com/109546113/193887582-95498fcf-ca59-49bc-a128-960b7439ee8b.png" />
+</details>
 
 #### Feel free to make new colour themes and improvements <3
 #### Also don't forget to star the repo :)
-
-
 
 ## Create new themes using template theme
 
@@ -68,14 +80,10 @@ Here is a [Live Preview](https://nainish-startpage.netlify.app/)
 1. Open `style.css` in your preferred ide or text editor.
 
 2. Inside `:root` change the `rgb` values for different variables.
-
-![guide](https://user-images.githubusercontent.com/90842071/194304604-9a33b75a-432f-47f7-b810-2142da53d2b5.jpg)
-
+  <details>
+    <summary>click for the guidelines</summary>
+    <img src="https://user-images.githubusercontent.com/90842071/194304604-9a33b75a-432f-47f7-b810-2142da53d2b5.jpg" />
+  </details>
 3. If you want to add gradient, you can add it inside `.bg`
 
 4. To add new image, navigate to `images` inside the folder you created and replace the existing image with the one you want. Rename the image to `gif.gif`. If the image is not gif you can convert it by using MS Paint (save as `gif.gif`) or any other software.
-
-### Committing and Pushing the changes
-
-1. Follow rest of [this tutorial](https://github.com/firstcontributions/first-contributions "this tutorial") from where you have left.
-
