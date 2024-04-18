@@ -53,7 +53,7 @@ Here is a [Live Preview](https://sebviolet.github.io/startpage/)
 </details>
 
 #### Feel free to make new colour themes and improvements <3
-#### Also don't forget to star the repo :)
+#### Also don't forget to star the repo :-)
 
 ## Create new themes using template theme
 
