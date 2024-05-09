@@ -1,9 +1,7 @@
 # Browser startpage
 Startpage to boost your productivity and at the same time give your desktop a new aesthetic look.
 
-Here is a [Live Preview](https://sebviolet.github.io/startpage/)
-
-(fork from [Nainish](https://github.com/Nainish-Rai/aesthetic-startpage))
+Here is a [Live Preview](https://sebviolet.github.io/startpage/) (fork from [Nainish](https://github.com/Nainish-Rai/aesthetic-startpage))
 
 ## Installation
 #### Method 1:
