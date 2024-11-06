@@ -32,7 +32,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Minify Action
-        uses: dra1ex/minify-action@v1.0.3
+        #uses: dra1ex/minify-action@v1.0.3
+        uses: sebviolet/action_pages-minify
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
