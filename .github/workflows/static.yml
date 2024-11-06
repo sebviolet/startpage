@@ -33,7 +33,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Minify Action
         #uses: dra1ex/minify-action@v1.0.3
-        uses: sebviolet/action_pages-minify
+        uses: sebviolet/action_pages-minify@0.1
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
