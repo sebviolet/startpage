@@ -9,7 +9,9 @@
   <link rel="stylesheet" type="text/css" href="./main-themes/retro-gradient/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+    rel="stylesheet" />
   <title>Startpage</title>
 </head>
 
@@ -105,10 +107,7 @@
     selectedTheme.setAttribute("href", `./main-themes/${theme}/style.css`);
     changeImgSrc(theme);
     var oldlink = document.getElementsByTagName("link").item(0);
-    document
-      .getElementsByTagName("head")
-      .item(0)
-      .replaceChild(selectedTheme, oldlink);
+    document.getElementsByTagName("head").item(0).replaceChild(selectedTheme, oldlink);
   }
 
   function changeCSS(cssFile, cssLinkIndex) {
@@ -119,10 +118,7 @@
     newlink.setAttribute("type", "text/css");
     newlink.setAttribute("href", `./main-themes/${cssFile}/style.css`);
     changeImgSrc(cssFile);
-    document
-      .getElementsByTagName("head")
-      .item(cssLinkIndex)
-      .replaceChild(newlink, oldlink);
+    document.getElementsByTagName("head").item(cssLinkIndex).replaceChild(newlink, oldlink);
     localStorage.setItem("selected-theme", cssFile);
   }
   function changeImgSrc(cssFile) {
@@ -139,13 +135,12 @@
     const search_term = document.getElementById("search_box").value;
     const url_match = search_term.match(is_url);
     const ip_match = search_term.match(is_ip);
-    if (url_match != null) {
+    if (url_match != null)
       window.location.href = url_match[0].substring(0, 4) == "http" ? url_match[0] : "https://" + url_match[0];
-    } else if (ip_match != null) {
+    else if (ip_match != null)
       window.location.href = ip_match[0].substring(0, 4) == "http" ? ip_match[0] : "http://" + ip_match[0];
-    } else {
+    else
       window.location.href = search_url + encodeURIComponent(search_term);
-    }
 
     return false;
   }
