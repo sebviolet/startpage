@@ -27,4 +27,4 @@ Here is a [Live Preview](https://sebviolet.github.io/startpage/) (fork from [Nai
 2. Inside `:root` change the `rgb` values for different variables.
 3. If you want to add gradient, you can add it inside `.bg`
 4. To add new image, navigate to `images` inside the folder you created and replace the existing image with the one you want.
-5. Rename the image to `gif.gif`. If the image is not gif you can convert it by using MS Paint (save as `gif.gif`) or any other software.
+5. Rename the image to `gif.png`. If the image is not gif you can convert it by using MS Paint (save as `gif.png`) or any other software.
