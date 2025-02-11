@@ -3,7 +3,7 @@ let saved_config = JSON.parse(localStorage.getItem("CONFIG"));
 const default_config = {
   overrideStorage: true,
   temperature: {
-    location: 'Matão, São Paulo',
+    location: 'Le Rouret, France',
     scale: "C",
   },
   clock: {
@@ -13,7 +13,7 @@ const default_config = {
   search: {
     engines: {
       g: ["https://google.com/search?q=", "Google"],
-      d: ["https://duckduckgo.com/html?q=", "DuckDuckGo"],
+      d: ["https://search.brave.com/search?q=", "Brave"],
       y: ["https://youtube.com/results?search_query=", "Youtube"],
       r: ["https://www.reddit.com/search/?q=", "Reddit"],
       p: ["https://www.pinterest.es/search/pins/?q=", "Pinterest"],
@@ -94,6 +94,12 @@ const default_config = {
             name: "disney+",
             url: "https://www.disneyplus.com/home",
             icon: "brand-disney",
+            icon_color: "#7daea3",
+          },
+          {
+            name: "netflix",
+            url: "https://www.netflix.com/fr/",
+            icon: "brand-netflix",
             icon_color: "#7daea3",
           },
           {
