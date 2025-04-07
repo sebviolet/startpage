@@ -1,0 +1,9 @@
+jobs:
+  # Build job or deploy for github-pages
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Minify Action Reload
+        uses: sebviolet/action_pages-minify@1.2.3
