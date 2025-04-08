@@ -6,7 +6,7 @@ class WeatherForecastClient {
 
   async getWeather() {
     return await fetch(this.url)
-      .then(res  => res.json())
+      .then(res => res.json())
       .then(json => JSON.stringify(json))
       .then(json => JSON.parse(json))
       .then(data => {

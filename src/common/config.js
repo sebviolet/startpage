@@ -25,7 +25,7 @@ class Config {
 
   config;
 
-  constructor (config) {
+  constructor(config) {
     this.config = config;
     this.storage = new Storage('config');
 

@@ -16,7 +16,7 @@ const default_config = {
       d: ["https://search.brave.com/search?q=", "Brave"],
       y: ["https://youtube.com/results?search_query=", "Youtube"],
       r: ["https://reddit.com/search/?q=", "Reddit"],
-      p: ["https://www.pinterest.es/search/pins/?q=", "Pinterest"],
+      p: ["https://pinterest.com/search/pins/?q=", "Pinterest"],
     },
   },
   keybindings: {
@@ -60,7 +60,7 @@ const default_config = {
           },
           {
             name: "twitch",
-            url: "https://www.twitch.tv/",
+            url: "https://twitch.tv/",
             icon: "brand-twitch",
             icon_color: "#d3869b",
           },
@@ -70,7 +70,7 @@ const default_config = {
         links: [
           {
             name: "chess",
-            url: "https://www.chess.com/home",
+            url: "https://chess.com/home",
             icon: "chess-queen-filled",
             icon_color: "#a9b665",
           },
@@ -120,7 +120,7 @@ const default_config = {
           links: [
             {
               name: "pinterest",
-              url: "https://www.pinterest.es/",
+              url: "https://pinterest.com/",
               icon: "brand-pinterest",
               icon_color: "#ea6962",
             },
@@ -154,12 +154,6 @@ const default_config = {
               icon_color: "#d3869b",
             },
             {
-              name: "uxpro",
-              url: "https://uxpro.cc/",
-              icon: "components",
-              icon_color: "#a9b665",
-            },
-            {
               name: "colorhunt",
               url: "https://colorhunt.co/",
               icon: "color-picker",
@@ -167,7 +161,7 @@ const default_config = {
             },
             {
               name: "adobe color",
-              url: "https://color.adobe.com/es/create/color-wheel",
+              url: "https://color.adobe.com/fr/create/color-wheel",
               icon: "brand-adobe",
               icon_color: "#7daea3",
             },
@@ -230,7 +224,7 @@ const default_config = {
             },
             {
               name: "hacktricks",
-              url: "https://book.hacktricks.xyz/welcome/readme",
+              url: "https://book.hacktricks.wiki/en/index.html",
               icon: "biohazard",
               icon_color: "#ea6962",
             },

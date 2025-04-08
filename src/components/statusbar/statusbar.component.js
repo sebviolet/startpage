@@ -325,9 +325,8 @@ class Statusbar extends Component {
     const categoriesCount = this.externalRefs.categories.length;
 
     for (let i = 0; i <= categoriesCount; i++) {
-      this.refs.indicator.innerHTML += `<li tab-index=${i} ${
-        i == 0 ? "active" : ""
-      }></li>`;
+      this.refs.indicator.innerHTML += `<li tab-index=${i} ${i == 0 ? "active" : ""
+        }></li>`;
     }
   }
 
