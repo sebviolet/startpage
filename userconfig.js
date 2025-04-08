@@ -15,7 +15,7 @@ const default_config = {
       g: ["https://google.com/search?q=", "Google"],
       d: ["https://search.brave.com/search?q=", "Brave"],
       y: ["https://youtube.com/results?search_query=", "Youtube"],
-      r: ["https://www.reddit.com/search/?q=", "Reddit"],
+      r: ["https://reddit.com/search/?q=", "Reddit"],
       p: ["https://www.pinterest.es/search/pins/?q=", "Pinterest"],
     },
   },
@@ -48,13 +48,13 @@ const default_config = {
           },
           {
             name: "reddit",
-            url: "https://www.reddit.com/",
+            url: "https://reddit.com/",
             icon: "brand-reddit",
             icon_color: "#e78a4e",
           },
           {
             name: "youtube",
-            url: "https://www.youtube.com/",
+            url: "https://youtube.com/",
             icon: "brand-youtube-filled",
             icon_color: "#ea6962",
           },
@@ -92,19 +92,19 @@ const default_config = {
         links: [
           {
             name: "disney+",
-            url: "https://www.disneyplus.com/home",
+            url: "https://disneyplus.com/home",
             icon: "brand-disney",
             icon_color: "#7daea3",
           },
           {
             name: "netflix",
-            url: "https://www.netflix.com/fr/",
+            url: "https://netflix.com/fr/",
             icon: "brand-netflix",
             icon_color: "#7daea3",
           },
           {
             name: "primevideo",
-            url: "https://www.primevideo.com/region/eu/?ref_=dv_web_unknown",
+            url: "https://primevideo.com/region/eu/?ref_=dv_web_unknown",
             icon: "brand-amazon",
             icon_color: "#7daea3",
           },
@@ -126,7 +126,7 @@ const default_config = {
             },
             {
               name: "artstation",
-              url: "https://www.artstation.com/?sort_by=community",
+              url: "https://artstation.com/?sort_by=community",
               icon: "chart-area",
               icon_color: "#7daea3",
             },
@@ -149,7 +149,7 @@ const default_config = {
           links: [
             {
               name: "figma",
-              url: "https://www.figma.com",
+              url: "https://figma.com",
               icon: "brand-figma",
               icon_color: "#d3869b",
             },
@@ -184,7 +184,7 @@ const default_config = {
           links: [
             {
               name: "thingiverse",
-              url: "https://www.thingiverse.com/",
+              url: "https://thingiverse.com/",
               icon: "circle-letter-t",
               icon_color: "#7daea3",
             },
@@ -218,7 +218,7 @@ const default_config = {
           links: [
             {
               name: "phind",
-              url: "https://www.phind.com/",
+              url: "https://phind.com/",
               icon: "brand-openai",
               icon_color: "#89b482",
             },
@@ -265,7 +265,7 @@ const default_config = {
             },
             {
               name: "hackerrank",
-              url: "https://www.hackerrank.com/dashboard",
+              url: "https://hackerrank.com/dashboard",
               icon: "code-asterix",
               icon_color: "#a9b665",
             },
@@ -299,7 +299,7 @@ const default_config = {
             },
             {
               name: "dropbox",
-              url: "https://www.dropbox.com/h?role=personal&di=left_nav",
+              url: "https://dropbox.com/h?role=personal&di=left_nav",
               icon: "box-seam",
               icon_color: "#7daea3",
             },
@@ -316,7 +316,7 @@ const default_config = {
           links: [
             {
               name: "linkedin",
-              url: "https://www.linkedin.com/feed/",
+              url: "https://linkedin.com/feed/",
               icon: "brand-linkedin",
               icon_color: "#7daea3",
             },
@@ -330,7 +330,7 @@ const default_config = {
 const CONFIG = new Config(saved_config ?? default_config);
 // const CONFIG = new Config(default_config);
 
-(function() {
+(function () {
   var css = document.createElement('link');
   css.href = 'src/css/tabler-icons.min.css';
   css.rel = 'stylesheet';
