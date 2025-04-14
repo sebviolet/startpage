@@ -12,7 +12,6 @@ class Statusbar extends Component {
 
   constructor() {
     super();
-
     this.setDependencies();
   }
 
@@ -315,9 +314,7 @@ class Statusbar extends Component {
     this.currentTabIndex = key;
 
     this.activate(this.refs.tabs, this.refs.tabs[key]);
-    this.activate(
-      this.externalRefs.categories,
-      this.externalRefs.categories[key],
+    this.activate(this.externalRefs.categories, this.externalRefs.categories[key],
     );
   }
 
