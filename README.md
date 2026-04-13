@@ -1,8 +1,5 @@
 # Startpage
 
-[Live Preview](https://sebviolet.github.io/startpage/)
+[Live Preview](https://startpage.frenchfamily.fr/)
 
 Feel free to fork and make your own changes!
-
-- Font: Fira Code
-- Colorscheme: Gruvbox Dark
