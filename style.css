@@ -10,7 +10,7 @@ html,
 body {
   background: var(--color-bg);
   color: var(--color-fg);
-  font-family: "Fira Code";
+  font-family: sans-serif;
   height: 100%;
   width: 100%;
   margin: 0;
@@ -48,8 +48,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 40px;
-  padding-top: 60px;
+  font-size: 30px;
+  padding-top: 0px;
 }
 
 .category {
