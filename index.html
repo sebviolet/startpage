@@ -2,78 +2,295 @@
 <html lang="en">
 
   <head>
-    <title>~/startpage</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="sebos" />
-    <meta name="description" content="Sebos Home Page" />
-    <link rel="icon" type="image/png" href="favico.png" />
-    <link rel="canonical" href="https://startpage.frenchfamily.fr/" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>New Tab Lite</title>
+
+    <!-- Network & Resource Hints -->
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+    <link rel="dns-prefetch" href="https://www.google.com" />
+    <link rel="dns-prefetch" href="https://icons.duckduckgo.com" />
+
+    <style>
+      :root {
+        --bg-color: #0f172a;
+        --card-bg: rgba(255, 255, 255, 0.07);
+        --card-hover: rgba(255, 255, 255, 0.15);
+        --text-color: #f8fafc;
+        --subtext-color: #94a3b8;
+        --accent-color: #38bdf8;
+        --blur-val: 16px;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      }
+
+      body {
+        background-color: var(--bg-color);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: var(--text-color);
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        transition: background-image 0.5s ease-in-out;
+      }
+
+      .overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(var(--blur-val));
+        z-index: 1;
+      }
+
+      .container {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        max-width: 700px;
+        gap: 2rem;
+      }
+
+      /* Clock & Date Header */
+      .time-wrapper {
+        text-align: center;
+      }
+
+      .clock {
+        font-size: 5.5rem;
+        font-weight: 700;
+        letter-spacing: -2px;
+        line-height: 1;
+        text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      }
+
+      .date-container {
+        margin-top: 0.5rem;
+        font-size: 1.1rem;
+        color: var(--subtext-color);
+        display: flex;
+        gap: 0.75rem;
+        justify-content: center;
+      }
+
+      .date-container span:nth-child(2) {
+        color: var(--accent-color);
+      }
+
+      /* Search Bar */
+      .search-box {
+        width: 100%;
+        display: flex;
+        background: var(--card-bg);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 0.5rem;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      }
+
+      .search-box select {
+        background: transparent;
+        border: none;
+        color: var(--accent-color);
+        padding: 0.5rem 0.75rem;
+        font-weight: 600;
+        outline: none;
+        cursor: pointer;
+      }
+
+      .search-box input {
+        flex: 1;
+        background: transparent;
+        border: none;
+        outline: none;
+        color: var(--text-color);
+        font-size: 1.1rem;
+        padding: 0.5rem;
+      }
+
+      /* Shortcut Grid */
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 1rem;
+        width: 100%;
+      }
+
+      .grid-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        background: var(--card-bg);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+        text-decoration: none;
+        color: var(--text-color);
+        transition: transform 0.15s ease, background 0.15s ease;
+        will-change: transform;
+      }
+
+      .grid-item:hover {
+        background: var(--card-hover);
+        transform: translateY(-2px);
+      }
+
+      .grid-item img {
+        width: 28px;
+        height: 28px;
+        margin-bottom: 0.5rem;
+        border-radius: 4px;
+      }
+
+      .grid-item span {
+        font-size: 0.85rem;
+        font-weight: 500;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        max-width: 80px;
+      }
+    </style>
   </head>
 
   <body>
-    <div class="container">
-      <div class="left-container">
-        <div class="gif">
-          <video autoplay loop muted playsinline>
-            <source src="Jean-claude vanhamme.webm" type="video/webm">
-          </video>
+
+    <div class="overlay"></div>
+
+    <main class="container">
+      <!-- Clock & Date -->
+      <div class="time-wrapper">
+        <div class="clock" id="clock">00:00</div>
+        <div class="date-container">
+          <span id="local-date">Loading date...</span>
         </div>
       </div>
 
-      <div class="right-container">
-        <div class="head">
-          <p>> cd ~/_</p>
-        </div>
+      <!-- Search Bar -->
+      <form class="search-box" action="https://www.google.com/search" method="GET" id="search-form">
+        <select id="engine-select">
+          <option value="https://www.google.com/search?q=">Google</option>
+          <option value="https://duckduckgo.com/?q=">DuckDuckGo</option>
+          <option value="https://www.bing.com/search?q=">Bing</option>
+        </select>
+        <input type="text" name="q" id="search-input" placeholder="Search the web..." autofocus autocomplete="off" />
+      </form>
 
-        <div class="bookmarks">
-          <div class="category">
-            <div class="links">
-              <ul>
-                <li class="title">work</li>
-                <li><a href="https://gmail.com">gmail</a></li>
-                <li><a href="https://linkedin.com">linkedin</a></li>
-                <li><a href="https://vim.rtorr.com">vim</a></li>
-              </ul>
-            </div>
-          </div>
+      <!-- Shortcut Tiles -->
+      <div class="grid" id="shortcut-grid"></div>
+    </main>
 
-          <div class="category">
-            <div class="links">
-              <ul>
-                <li class="title">dev</li>
-                <li><a href="https://github.com">github</a></li>
-                <li><a href="https://mankier.com">mankier</a></li>
-                <li><a href="https://devdocs.io">devdocs</a></li>
-              </ul>
-            </div>
-          </div>
+    <script>
+      // Config & Fallback Shortcuts
+      const DEFAULT_LINKS = [
+        { name: 'GitHub', url: 'https://github.com' },
+        { name: 'YouTube', url: 'https://youtube.com' },
+        { name: 'Reddit', url: 'https://reddit.com' },
+        { name: 'X / Twitter', url: 'https://x.com' }
+      ];
 
-          <div class="category">
-            <div class="links">
-              <ul>
-                <li class="title">reddit</li>
-                <li><a href="https://reddit.com/r/programming">programming</a></li>
-                <li><a href="https://reddit.com/r/selfhosted">selfhosted</a></li>
-                <li><a href="https://reddit.com/r/unixporn">unixporn</a></li>
-              </ul>
-            </div>
-          </div>
+      // High-Efficiency Clock Synchronization
+      function initClock() {
+        const clockEl = document.getElementById('clock');
+        let lastTimeStr = '';
 
-          <div class="category">
-            <div class="links">
-              <ul>
-                <li class="title">play</li>
-                <li><a href="https://youtube.com">youtube</a></li>
-                <li><a href="https://twitch.tv">twitch</a></li>
-                <li><a href="https://netflix.com">netflix</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+        function tick() {
+          const now = new Date();
+          const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false });
+
+          if (timeStr !== lastTimeStr) {
+            clockEl.textContent = timeStr;
+            lastTimeStr = timeStr;
+          }
+
+          // Align next frame directly with the start of the next second
+          const delay = 1000 - now.getMilliseconds();
+          setTimeout(tick, delay);
+        }
+        tick();
+      }
+
+      // Cached Date Renderer
+      function initDates() {
+        const gDateEl = document.getElementById('local-date');
+
+        const now = new Date();
+        gDateEl.textContent = now.toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric' });
+      }
+
+      // Zero-Reflow Single DocumentFragment Grid Renderer
+      function renderShortcuts() {
+        const grid = document.getElementById('shortcut-grid');
+        const savedLinks = JSON.parse(localStorage.getItem('nt_links')) || DEFAULT_LINKS;
+        const fragment = document.createDocumentFragment();
+
+        savedLinks.forEach(link => {
+          const item = document.createElement('a');
+          item.className = 'grid-item';
+          item.href = link.url;
+
+          const domain = new URL(link.url).hostname;
+          const icon = document.createElement('img');
+          // Google's endpoint serves high-res PNG favicons reliably:
+          icon.src = `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
+
+          // Add a fallback so broken icons never leave blank spaces
+          icon.onerror = () => {
+            icon.src = `https://api.dicebear.com/7.x/initials/svg?seed=${encodeURIComponent(link.name)}`;
+          };
+
+          icon.alt = link.name;
+          icon.loading = 'lazy';
+          icon.decoding = 'async';
+
+          const label = document.createElement('span');
+          label.textContent = link.name;
+
+          item.appendChild(icon);
+          item.appendChild(label);
+          fragment.appendChild(item);
+        });
+
+        grid.innerHTML = '';
+        grid.appendChild(fragment);
+      }
+
+      // Dynamic Search Engine Selection
+      function initSearch() {
+        const form = document.getElementById('search-form');
+        const select = document.getElementById('engine-select');
+        const input = document.getElementById('search-input');
+
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const query = input.value.trim();
+          if (query) {
+            window.location.href = select.value + encodeURIComponent(query);
+          }
+        });
+      }
+
+      // Initial Execution Batch
+      document.addEventListener('DOMContentLoaded', () => {
+        initClock();
+        initDates();
+        renderShortcuts();
+        initSearch();
+      });
+    </script>
   </body>
 
 </html>
